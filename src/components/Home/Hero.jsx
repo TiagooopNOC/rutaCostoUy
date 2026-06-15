@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Hero = () => {
   return (
     <section className="bg-superficie px-5 py-14 font-montserrat sm:px-8 lg:px-12 lg:py-20">
@@ -13,13 +15,13 @@ const Hero = () => {
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <button
-              type="button"
+            <Link
+              to="/calculadora"
               className="inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-primario px-8 py-4 font-semibold text-white shadow-lg shadow-primario/15 transition-all duration-300 hover:-translate-y-1 hover:bg-titulos hover:shadow-xl active:translate-y-0 active:scale-95 motion-reduce:transition-none"
             >
               <i className="bi bi-calculator" aria-hidden="true" />
               Calcular viaje
-            </button>
+            </Link>
 
             <button
               type="button"

@@ -59,13 +59,21 @@ const Footer = () => {
           </p>
           <div className="flex gap-3 pt-5 text-xl text-cuerpo">
             {[
-              ["LinkedIn", "bi-linkedin"],
-              ["GitHub", "bi-github"],
-              ["Instagram", "bi-instagram"],
-            ].map(([name, icon]) => (
+              [
+                "LinkedIn",
+                "bi-linkedin",
+                "https://www.linkedin.com/in/tiago-nocella-massaferro-3ab422368/",
+              ],
+              ["GitHub", "bi-github", "https://github.com/TiagooopNOC"],
+              [
+                "Instagram",
+                "bi-instagram",
+                "https://www.instagram.com/nmdev.uy/",
+              ],
+            ].map(([name, icon, link]) => (
               <a
                 key={name}
-                href="#"
+                href={link}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-bordecards bg-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:border-primario hover:bg-primario hover:text-white hover:shadow-lg hover:shadow-primario/20 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-primario active:translate-y-0 active:scale-95 motion-reduce:transition-none"
                 aria-label={name}
               >

@@ -42,12 +42,12 @@ const Navbar = () => {
           </a>
         </div>
 
-        <a
-          href="#calculadora"
+        <NavLink
+          to="/calculadora"
           className="hidden cursor-pointer rounded-full border border-primario bg-primario px-5 py-2 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-titulos hover:bg-titulos hover:shadow-lg hover:shadow-primario/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primario active:translate-y-0 active:scale-95 motion-reduce:transition-none md:inline-flex"
         >
           Calcular
-        </a>
+        </NavLink>
 
         <button
           type="button"
@@ -68,13 +68,13 @@ const Navbar = () => {
         id="mobile-menu"
         className={`${isMenuOpen ? "grid" : "hidden"} gap-1 border-t border-bordecards px-5 pb-5 pt-3 font-montserrat text-sm font-semibold text-titulos md:hidden`}
       >
-        <a
-          href="#calculadora"
+        <NavLink
+          to="/calculadora"
           className="rounded-xl px-4 py-3 transition-colors hover:bg-white hover:text-primario"
           onClick={closeMenu}
         >
           Calculadora
-        </a>
+        </NavLink>
         <a
           href="#rutas-frecuentes"
           className="rounded-xl px-4 py-3 transition-colors hover:bg-white hover:text-primario"
@@ -89,13 +89,13 @@ const Navbar = () => {
         >
           Mis Rutas
         </a>
-        <a
-          href="#calculadora"
+        <NavLink
+          to="calculadora"
           className="mt-2 inline-flex justify-center rounded-full bg-primario px-5 py-3 text-white transition-colors hover:bg-titulos"
           onClick={closeMenu}
         >
           Calcular
-        </a>
+        </NavLink>
       </div>
     </header>
   );
