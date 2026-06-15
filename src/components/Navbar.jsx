@@ -1,12 +1,29 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { NavLink, Link } from "react-router";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [comingSoonSection, setComingSoonSection] = useState(null);
   const navItemClasses =
     "relative cursor-pointer py-2 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-primario after:transition-transform after:duration-300 hover:text-primario hover:after:scale-x-100 focus-visible:text-primario focus-visible:outline-none focus-visible:after:scale-x-100 motion-reduce:transition-none motion-reduce:after:transition-none";
 
+  const toastTimeoutRef = useRef(null);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleComingSoon = (e, sectionName) => {
+    e.preventDefault();
+
+    setComingSoonSection(sectionName);
+    closeMenu();
+
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
+
+    toastTimeoutRef.current = setTimeout(() => {
+      setComingSoonSection(null);
+    }, 2500);
+  };
 
   return (
     <header className="border-b border-bordecards bg-superficie shadow-md">
@@ -34,10 +51,18 @@ const Navbar = () => {
           <NavLink to="/calculadora" className={navItemClasses}>
             Calculadora
           </NavLink>
-          <a href="#rutas-frecuentes" className={navItemClasses}>
+          <a
+            href="#rutas-frecuentes"
+            className={navItemClasses}
+            onClick={(e) => handleComingSoon(e, "Rutas Frecuentes")}
+          >
             Rutas Frecuentes
           </a>
-          <a href="#mis-rutas" className={navItemClasses}>
+          <a
+            href="#mis-rutas"
+            className={navItemClasses}
+            onClick={(e) => handleComingSoon(e, "Mis Rutas")}
+          >
             Mis Rutas
           </a>
         </div>
@@ -64,6 +89,7 @@ const Navbar = () => {
         </button>
       </nav>
 
+      {/* MOBILE MENU  */}
       <div
         id="mobile-menu"
         className={`${isMenuOpen ? "grid" : "hidden"} gap-1 border-t border-bordecards px-5 pb-5 pt-3 font-montserrat text-sm font-semibold text-titulos md:hidden`}
@@ -78,14 +104,14 @@ const Navbar = () => {
         <a
           href="#rutas-frecuentes"
           className="rounded-xl px-4 py-3 transition-colors hover:bg-white hover:text-primario"
-          onClick={closeMenu}
+          onClick={(e) => handleComingSoon(e, "Rutas Frecuentes")}
         >
           Rutas Frecuentes
         </a>
         <a
           href="#mis-rutas"
           className="rounded-xl px-4 py-3 transition-colors hover:bg-white hover:text-primario"
-          onClick={closeMenu}
+          onClick={(e) => handleComingSoon(e, "Mis Rutas")}
         >
           Mis Rutas
         </a>
@@ -97,6 +123,24 @@ const Navbar = () => {
           Calcular
         </NavLink>
       </div>
+
+      {comingSoonSection && (
+        <div className="fixed right-5 top-24 z-50 max-w-xs animate-fade-in rounded-2xl border border-bordecards bg-white px-5 py-4 font-montserrat shadow-xl shadow-black/10">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primario/10 text-xl text-primario">
+              <i className="bi bi-clock-history" aria-hidden="true" />
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-titulos">Próximamente</p>
+              <p className="mt-1 text-xs leading-5 text-cuerpo">
+                La sección {comingSoonSection} estará disponible en una próxima
+                versión.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
