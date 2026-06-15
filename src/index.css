@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+/* Paleta de Colores */
+@theme {
+  /* Utilizado en botones principales, el logo y el resumen del viaje. */
+  --color-primario: #0038a8;
+
+  /* Fondo de Superficie: Color base de toda la página para un look limpio. */
+  --color-superficie: #f8f9fa;
+
+  --color-bordecards: #e5e7eb;
+
+  /* Textos: */
+  /* Títulos */
+  /* (Azul muy oscuro) para máximo contraste. */
+  --color-titulos: #001d4d;
+
+  /* (Gris medio) para una lectura descansada. */
+  --color-cuerpo: #4b5563;
+
+  /* (Verde esmeralda) usado sutilmente en iconos de beneficios. */
+  --color-acentos: #10b981;
+}
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+}
