@@ -54,3 +54,32 @@ export const lugares = [
   { id: "tranqueras", nombre: "Tranqueras" },
   { id: "vergara", nombre: "Vergara" },
 ];
+
+const lugaresPopulares = [
+  "montevideo",
+  "punta-del-este",
+  "maldonado",
+  "piriapolis",
+  "colonia-del-sacramento",
+  "rocha",
+  "salto",
+  "paysandu",
+  "atlantida",
+  "rivera",
+];
+
+export const lugaresOrdenados = [...lugares].sort((a, b) => {
+  const indexA = lugaresPopulares.indexOf(a.id);
+  const indexB = lugaresPopulares.indexOf(b.id);
+
+  const aEsPopular = indexA !== -1;
+  const bEsPopular = indexB !== -1;
+
+  if (aEsPopular && bEsPopular) return indexA - indexB;
+
+  if (aEsPopular) return -1;
+
+  if (bEsPopular) return 1;
+
+  return a.nombre.localeCompare(b.nombre, "es-UY");
+});

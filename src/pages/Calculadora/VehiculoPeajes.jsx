@@ -44,9 +44,7 @@ const VehiculoPeajes = ({
 
       <div className="mt-4">
         <div className="flex flex-wrap items-center gap-3">
-          <p className="text-xs font-bold text-titulos">
-            Consumo (L/100 km)
-          </p>
+          <p className="text-xs font-bold text-titulos">Consumo (L/100 km)</p>
           <div className="flex flex-wrap gap-1.5">
             {presetsConsumo.map((preset) => {
               const seleccionado =
@@ -76,9 +74,7 @@ const VehiculoPeajes = ({
           max="50"
           step="0.1"
           value={datosVehiculo.consumoCada100Km}
-          onChange={(event) =>
-            onChange("consumoCada100Km", event.target.value)
-          }
+          onChange={(event) => onChange("consumoCada100Km", event.target.value)}
           className={inputClasses}
           aria-label="Consumo cada 100 kilómetros"
         />
@@ -89,9 +85,7 @@ const VehiculoPeajes = ({
           Combustible
           <select
             value={datosVehiculo.combustibleId}
-            onChange={(event) =>
-              onChange("combustibleId", event.target.value)
-            }
+            onChange={(event) => onChange("combustibleId", event.target.value)}
             className={inputClasses}
           >
             {Object.keys(preciosCombustible).map((id) => (
@@ -106,9 +100,7 @@ const VehiculoPeajes = ({
           Categoría de peaje
           <select
             value={datosVehiculo.categoriaPeaje}
-            onChange={(event) =>
-              onChange("categoriaPeaje", event.target.value)
-            }
+            onChange={(event) => onChange("categoriaPeaje", event.target.value)}
             className={inputClasses}
           >
             {Object.keys(tarifasPeajes).map((id) => (
@@ -149,8 +141,7 @@ const VehiculoPeajes = ({
         </legend>
         <div className="mt-2 grid grid-cols-3 gap-2">
           {metodosPeaje.map((metodo) => {
-            const seleccionado =
-              datosVehiculo.metodoPeaje === metodo.id;
+            const seleccionado = datosVehiculo.metodoPeaje === metodo.id;
 
             return (
               <button
@@ -174,13 +165,6 @@ const VehiculoPeajes = ({
         </div>
       </fieldset>
 
-      <button
-        type="submit"
-        className="mt-7 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primario px-5 py-3 text-xs font-semibold text-white shadow-lg shadow-primario/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-titulos hover:shadow-xl active:translate-y-0 active:scale-[0.99] motion-reduce:transition-none"
-      >
-        <i className="bi bi-calculator" aria-hidden="true" />
-        Calcular costo
-      </button>
     </section>
   );
 };

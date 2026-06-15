@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 
 import DetallesViaje from "./DetallesViaje";
-import ResultadoViaje from "./ResultadoViaje";
 import VehiculoPeajes from "./VehiculoPeajes";
+import ResultadoViaje from "./ResultadoViaje";
 
-import { lugares } from "../../data/lugares";
+import { lugaresOrdenados } from "../../data/lugares";
 import { preciosCombustible } from "../../data/precioCombustible";
 import { tarifasPeajes } from "../../data/tarifasPeajes";
 
@@ -64,7 +64,7 @@ const Calculadora = () => {
   };
 
   const obtenerNombreLugar = (id) => {
-    return lugares.find((lugar) => lugar.id === id)?.nombre ?? id;
+    return lugaresOrdenados.find((lugar) => lugar.id === id)?.nombre ?? id;
   };
 
   return (
@@ -73,7 +73,7 @@ const Calculadora = () => {
         <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(340px,1fr)]">
           <form onSubmit={(event) => event.preventDefault()}>
             <DetallesViaje
-              lugares={lugares}
+              lugares={lugaresOrdenados}
               datosViaje={datosViaje}
               onChange={actualizarDatosViaje}
             />
