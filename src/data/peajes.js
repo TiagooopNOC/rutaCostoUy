@@ -1,0 +1,92 @@
+export const peajes = [
+  {
+    id: "barra-santa-lucia",
+    nombre: "Peaje La Barra de Santa Lucía",
+    ruta: "ruta-1",
+    km: 23.5,
+  },
+  {
+    id: "cufre",
+    nombre: "Peaje Cufré",
+    ruta: "ruta-1",
+    km: 107.35,
+  },
+  {
+    id: "mercedes",
+    nombre: "Peaje Mercedes",
+    ruta: "ruta-2",
+    km: 284.4,
+  },
+  {
+    id: "paso-del-puerto",
+    nombre: "Peaje Paso del Puerto",
+    ruta: "ruta-3",
+    km: 245.2,
+  },
+  {
+    id: "queguay",
+    nombre: "Peaje Queguay",
+    ruta: "ruta-3",
+    km: 392.75,
+  },
+  {
+    id: "mendoza",
+    nombre: "Peaje Mendoza",
+    ruta: "ruta-5",
+    km: 67.7,
+  },
+  {
+    id: "centenario",
+    nombre: "Peaje Centenario",
+    ruta: "ruta-5",
+    km: 246.35,
+  },
+  {
+    id: "manuel-diaz",
+    nombre: "Peaje Manuel Díaz",
+    ruta: "ruta-5",
+    km: 423.2,
+  },
+  {
+    id: "soca",
+    nombre: "Peaje Soca",
+    ruta: "ruta-8",
+    km: 50.5,
+  },
+  {
+    id: "cebollati",
+    nombre: "Peaje Cebollatí",
+    ruta: "ruta-8",
+    km: 206.25,
+  },
+  {
+    id: "capilla-de-cella",
+    nombre: "Peaje Capilla de Cella",
+    ruta: "ruta-9",
+    km: 79.5,
+  },
+  {
+    id: "garzon",
+    nombre: "Peaje Garzón",
+    ruta: "ruta-9",
+    km: 191,
+  },
+  {
+    id: "santa-lucia",
+    nombre: "Peaje Santa Lucía",
+    ruta: "ruta-11",
+    km: 81,
+  },
+  {
+    id: "pando",
+    nombre: "Peaje Pando",
+    ruta: "interbalnearia",
+    km: 33,
+  },
+  {
+    id: "solis",
+    nombre: "Peaje Solís",
+    ruta: "interbalnearia",
+    km: 81,
+  },
+];
